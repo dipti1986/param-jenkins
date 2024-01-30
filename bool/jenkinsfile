@@ -7,12 +7,19 @@ pipeline{
       }
     parameters{
         booleanParam(defaultValue:true,name:'myBoolean', description:'boolean Example' )
-
+        stringParam(defaultValue:Env,name:'myEnv', description:'string Example' )
     }
 
     
   stages{
     stage ('demo'){
+       steps{ 
+       echo 'the value of param is: ${params.myBoolean}'
+       }
+     }
+    
+
+  stage ('demo2'){
        steps{ 
        echo 'the value of param is: ${params.myBoolean}'
        }
