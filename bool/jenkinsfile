@@ -3,14 +3,14 @@ pipeline{
     kubernetes {
         yamlFile 'pod.yaml'
         retries 2
-
+        }
+      }
     parameters{
         booleanParam(defaultname:true,name:'myBoolean', description:'boolean example' )
 
     }
 
-    }
-  }
+    
   stages{
     stage ('demo'){
        steps{ 
