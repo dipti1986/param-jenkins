@@ -5,16 +5,17 @@ pipeline{
         retries 2
 
     parameters{
-        booleanParam(defaultname:true,name: myBoolean, description: )
+        booleanParam(defaultname:true,name:'myBoolean', description:'boolean example' )
 
     }
 
     }
   }
   stages{
-    stage ('clean up'){
+    stage ('demo'){
        steps{ 
-       deletedir()}
+       echo 'the value of param is: ${params.myBoolean}'
+       }
      }
     }
 }
