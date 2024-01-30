@@ -21,7 +21,7 @@ pipeline{
 
   stage ('demo2'){
        steps{ 
-       echo 'the value of param is: ${params.myEnv}'
+       echo 'the string is set to : ${params.myEnv}'
        }
      }
     }
