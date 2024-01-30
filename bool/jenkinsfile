@@ -7,7 +7,7 @@ pipeline{
       }
     parameters{
         booleanParam(defaultValue:true,name:'myBoolean', description:'boolean Example' )
-        stringParam(defaultValue:Env,name:'myEnv', description:'string Example' )
+        stringParam(defaultValue:Test,name:'myEnv', description:'string Example' )
     }
 
     
@@ -21,7 +21,7 @@ pipeline{
 
   stage ('demo2'){
        steps{ 
-       echo 'the value of param is: ${params.myBoolean}'
+       echo 'the value of param is: ${params.myEnv}'
        }
      }
     }
