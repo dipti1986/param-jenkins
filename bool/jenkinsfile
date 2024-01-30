@@ -1,0 +1,20 @@
+pipeline{
+  agent{
+    kubernetes {
+        yamlFile 'pod.yaml'
+        retries 2
+
+    parameters{
+        booleanParam(defaultname:true,name: myBoolean, description: )
+
+    }
+
+    }
+  }
+  stages{
+    stage ('clean up'){
+       steps{ 
+       deletedir()}
+     }
+    }
+}
